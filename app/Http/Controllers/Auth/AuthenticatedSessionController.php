@@ -22,6 +22,7 @@ class AuthenticatedSessionController extends Controller
 
     /**
      * Handle an incoming authentication request.
+     * 
      */
     public function store(LoginRequest $request): RedirectResponse
     {
@@ -29,7 +30,16 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        // 判斷登入身分
+        $url = '';
+        if($request->user()->role ==='admin') {
+            $url = 'admin/dashboard';    
+        }elseif ($request->user()->role ==='instructor') {
+            $url = 'instructor/dashboard';
+        }elseif ($request->user()->role === 'user') {
+            $url = '/dashboard';
+        }
+        return redirect()->intended($url);
     }
 
     /**
