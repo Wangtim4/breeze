@@ -33,6 +33,10 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/user/logout', [UserController::class, 'UserLogout'])->name('user.logout');
 
+    Route::get('/user/change/password', [UserController::class, 'UserChangePassword'])->name('user.change.password');
+
+    Route::post('/user/password/update', [UserController::class, 'UserPasswordUpdate'])->name('user.password.update');
+
     Route::post('/user/profile/update', [UserController::class, 'UserProfileUpdate'])->name('user.profile.update');
 
     // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
