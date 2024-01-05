@@ -85,18 +85,18 @@
                             </div><!-- end input-box -->
                             <div class="btn-box">
                                 <div class="custom-control custom-checkbox mb-2 fs-15">
-                                    <input type="checkbox" class="custom-control-input" id="receiveCheckbox" required>
+                                    <input type="checkbox" class="custom-control-input" id="receiveCheckbox">
                                     <label class="custom-control-label custom--control-label lh-20" for="receiveCheckbox">Yes! I want to get the most out of Aduca by receiving emails with exclusive deals, personal recommendations and learning tips!</label>
                                 </div><!-- end custom-control -->
                                 <div class="custom-control custom-checkbox mb-4 fs-15">
-                                    <input type="checkbox" class="custom-control-input" id="agreeCheckbox" required>
+                                    <input type="checkbox" class="custom-control-input" id="agreeCheckbox">
                                     <label class="custom-control-label custom--control-label" for="agreeCheckbox">by signing i agree to the
                                         <a href="terms-and-conditions.html" class="text-color hover-underline">terms and conditions</a> and
                                         <a href="privacy-policy.html" class="text-color hover-underline">privacy policy</a>
                                     </label>
                                 </div><!-- end custom-control -->
                                 <button class="btn theme-btn" type="submit">Register Account <i class="la la-arrow-right icon ml-1"></i></button>
-                                <p class="fs-14 pt-2">Already have an account? <a href="{{route('login')}}" class="text-color hover-underline">Log in</a></p>
+                                <p class="fs-14 pt-2">Already have an account? <a href="{{route('login')}}" class="text-color hover-underline">Login</a></p>
                             </div><!-- end btn-box -->
                         </form>
                     </div><!-- end card-body -->
