@@ -77,6 +77,9 @@
 	<script src="{{asset('backend/assets/js/index.js')}}"></script>
 	<!--app JS-->
 	<script src="{{asset('backend/assets/js/app.js')}}"></script>
+	{{-- C:\xampp\htdocs\laravel\Udemy\breeze\public\backend\assets\js匯入驗證validate.min.js --}}
+	<script src="{{asset('backend/assets/js/validate.min.js')}}"></script>
+
 	<script>
 		new PerfectScrollbar(".app-container")
 	</script>

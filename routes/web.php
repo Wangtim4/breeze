@@ -65,7 +65,9 @@ Route::middleware(['auth', 'roles:admin'])->group(function() {
     // Catrgory All Route
     Route::controller(CatrgoryController::class)->group(function() {
         Route::get('/all/category', 'AllCategory')->name('all.category');
+        Route::get('/add/category', 'AddCategory')->name('add.category');
     });
+    // End Catrgory All Route
 });
 
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
