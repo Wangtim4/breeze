@@ -23,7 +23,7 @@
         <div class="card-body p-4">
             <h5 class="mb-4">Add Category</h5>
 
-            <form id="myForm"  action="" method="post" class="row g-3">
+            <form id="myForm"  action="{{ route('store.category') }}" method="post" class="row g-3" enctype="multipart/form-data">
                 @csrf
                 {{-- 3.加入form-group --}}
                 <div class="form-group col-md-6">

@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
+// use Intervention\Image\Facades\Image as Image;
+use Intervention\Image\Facades\Image;
+// use Intervention\Image\ImageManagerStatic;
 
 return [
 
@@ -159,7 +162,9 @@ return [
         /*
          * Package Service Providers...
          */
-
+        // 使用https://image.intervention.io/v2/introduction/installation#integration-in-laravel
+        // 匯入use Intervention\Image\Facades\Image as Image;
+        // Intervention\Image\ImageServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -183,6 +188,8 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+
+        // 'Image' => Intervention\Image\Facades\Image::class,
     ])->toArray(),
 
 ];
