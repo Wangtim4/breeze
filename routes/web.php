@@ -72,6 +72,17 @@ Route::middleware(['auth', 'roles:admin'])->group(function() {
         Route::get('/delete/category/{id}', 'DeleteCategory')->name('delete.category');
     });
     // End Catrgory All Route
+
+    // SubCatrgory All Route
+    Route::controller(CatrgoryController::class)->group(function() {
+        Route::get('/all/subcategory', 'AllSubCategory')->name('all.subcategory');
+        Route::get('/add/category', 'AddCategory')->name('add.category');
+        Route::post('/store/category', 'StoreCategory')->name('store.category');
+        Route::get('/edit/category/{id}', 'EditCategory')->name('edit.category');
+        Route::post('/update/category', 'UpdateCategory')->name('update.category');
+        Route::get('/delete/category/{id}', 'DeleteCategory')->name('delete.category');
+    });
+    // End SubCatrgory All Route
 });
 
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');

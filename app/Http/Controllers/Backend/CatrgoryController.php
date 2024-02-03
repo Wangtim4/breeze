@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\SubCategory;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use Intervention\Image\ImageManager;
@@ -118,6 +119,14 @@ class CatrgoryController extends Controller
             'alert-type'=> 'success',
         );
         return redirect()->back()->with($notification);
+
+    }//end
+
+    ///////////// All  SubCategory ///////////////
+
+    public function AllSubCategory() {
+        $subcategory = SubCategory::latest()->get();
+        return view("admin.backend.subcategory.all_subcategory",compact("subcategory"));
 
     }//end
 
