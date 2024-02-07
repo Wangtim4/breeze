@@ -86,7 +86,8 @@ Route::middleware(['auth', 'roles:admin'])->group(function() {
 
     // Instructor All Route
     Route::controller(AdminController::class)->group(function() {
-        Route::get('/all/nstructor', 'AllInstructor')->name('all.instructor');
+        Route::get('/all/instructor', 'AllInstructor')->name('all.instructor');
+        Route::post('/update/user/status', 'UpdateUserStatus')->name('update.user.status');
       });
     // End Instructor All Route
 });
