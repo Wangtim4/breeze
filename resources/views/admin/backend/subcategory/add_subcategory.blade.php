@@ -12,7 +12,7 @@
                 <ol class="breadcrumb mb-0 p-0">
                     <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">Add Category</li>
+                    <li class="breadcrumb-item active" aria-current="page">Add SubCategory</li>
                 </ol>
             </nav>
         </div>
@@ -21,26 +21,29 @@
     <!--end breadcrumb-->
     <div class="card">
         <div class="card-body p-4">
-            <h5 class="mb-4">Add Category</h5>
+            <h5 class="mb-4">Add SubCategory</h5>
 
-            <form id="myForm"  action="{{ route('store.category') }}" method="post" class="row g-3" enctype="multipart/form-data">
+            <form id="myForm"  action="{{ route('store.subcategory') }}" method="post" class="row g-3" enctype="multipart/form-data">
                 @csrf
                 {{-- 3.加入form-group --}}
                 <div class="form-group col-md-6">
                     <label for="input1" class="form-label">Category Name</label>
-                    <input type="text" class="form-control" name="category_name" id="input1">
-                </div>
-                <div class="col-md-6">
+                    <select class="form-select mb-3" name="category_id">
+                        <option selected="" disabled>Open this select menu</option>
+                        @foreach ($category as $item)
+                            
+                        <option value="{{ $item->id }}">{{ $item->category_name }}</option>
+                        
+                        @endforeach
 
+                    </select>
                 </div>
-                <div class="col-md-6 form-group">
-                    <label for="input2" class="form-label">Category Image</label>
-                    <input type="file" class="form-control" id="image" name="image" >
+
+                <div class="form-group col-md-6">
+                    <label for="input1" class="form-label">SubCategory Name</label>
+                    <input type="text" class="form-control" name="subcategory_name" id="input1">
                 </div>
-                <div class="col-md-6">
-                      {{-- 顯示上傳圖片 --}}
-                      <img id="showImage" src="{{ (!empty($profileData->photo))?url('upload/admin_images/'.$profileData->photo):url('upload/no_image.jpg')}}" alt="Admin" class="rounded-circle p-1 bg-primary" width="80">
-                </div>
+                
                  <div class="col-md-12">
                     <div class="d-md-flex d-grid align-items-center gap-3">
                         <button type="submit" class="btn btn-primary px-4">Save Change</button>
@@ -58,22 +61,22 @@
         $('#myForm').validate({
             rules: {
                 // 2. field_name改為驗證ID
-                category_name: {
+                subcategory_name: {
                     required : true,
                 }, 
                 
-                image: {
+                category_id: {
                     required : true,
                 }, 
                 
             },
             messages :{
-                category_name: {
-                    required : 'Please Enter Category Name',
+                subcategory_name: {
+                    required : 'Please Enter SubCategory Name',
                 }, 
                  
-                image: {
-                    required : 'Please Select Category Image',
+                category_id: {
+                    required : 'Please Select Category Name',
                 }, 
                  
 
