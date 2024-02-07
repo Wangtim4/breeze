@@ -83,6 +83,12 @@ Route::middleware(['auth', 'roles:admin'])->group(function() {
         Route::get('/delete/subcategory/{id}', 'DeleteSubCategory')->name('delete.subcategory');
     });
     // End SubCatrgory All Route
+
+    // Instructor All Route
+    Route::controller(AdminController::class)->group(function() {
+        Route::get('/all/nstructor', 'AllInstructor')->name('all.instructor');
+      });
+    // End Instructor All Route
 });
 
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
