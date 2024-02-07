@@ -87,6 +87,10 @@ Route::middleware(['auth', 'roles:admin'])->group(function() {
 
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
 
+Route::get('/become/instructor', [AdminController::class, 'BecomeInstructor'])->name('become.instructor');
+
+Route::post('/instructor/register', [AdminController::class, 'InstructorRegister'])->name('instructor.register');
+
 
 Route::middleware(['auth', 'roles:instructor'])->group(function() {
     
