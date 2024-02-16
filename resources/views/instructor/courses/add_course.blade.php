@@ -70,8 +70,8 @@
 
                 <div class="form-group col-md-6">
                     <label for="subcategory" class="form-label">Course SubCategory</label>
-                    <select class="form-select mb-3" id="subcategory" name="category_id">
-                        <option selected="" disabled>Open this select menu</option>
+                    <select class="form-select mb-3" id="subcategory" name="subcategory_id">
+                        <option>Open this select menu</option>
                        
 
                     </select>
@@ -220,6 +220,32 @@
     });
 </script>
 
+<script type="text/javascript">
+        
+    $(document).ready(function(){
+        $('select[name="category_id"]').on('change', function(){
+            var category_id = $(this).val();
+            if (category_id) {
+                $.ajax({
+                    url: "{{ url('/subcategory/ajax') }}/"+category_id,
+                    type: "GET",
+                    dataType:"json",
+                    success:function(data){
+                        $('select[name="subcategory_id"]').html('');
+                        var d =$('select[name="subcategory_id"]').empty();
+                        $.each(data, function(key, value){
+                            $('select[name="subcategory_id"]').append('<option value="'+ value.id + '">' + value.subcategory_name + '</option>');
+                        });
+                    },
+
+                });
+            } else {
+                alert('danger');
+            }
+        });
+    });
+
+</script>
 
     
 @endsection

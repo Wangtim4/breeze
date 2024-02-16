@@ -28,5 +28,14 @@ class CourseController extends Controller
         return view('instructor.courses.add_course',compact('categories'));
 
     }//end
+    
+    public function GetSubcategory($category_id){
+
+        $subcat = SubCategory::where('category_id',$category_id)->orderBy('subcategory_name','ASC')->get();
+        return json_encode($subcat);
+
+    }//end
+
+
 
 }
