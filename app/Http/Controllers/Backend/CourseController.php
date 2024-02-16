@@ -22,5 +22,11 @@ class CourseController extends Controller
         return view('instructor.courses.all_course',compact('courses'));
 
     }//end
+    public function AddCourse(){
+
+        $categories = Category::latest()->get();
+        return view('instructor.courses.add_course',compact('categories'));
+
+    }//end
 
 }
