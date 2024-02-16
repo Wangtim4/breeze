@@ -27,6 +27,10 @@
 	<link rel="stylesheet" href="{{asset('backend/assets/css/semi-dark.css')}}"/>
 	<link rel="stylesheet" href="{{asset('backend/assets/css/header-colors.css')}}"/>
 
+	{{-- Datatable --}}
+	<link href="{{asset('backend/assets/plugins/datatable/css/dataTables.bootstrap5.min.css')}}" rel="stylesheet" />
+	{{-- End Datatable --}}
+
 	{{-- Toast --}}
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
 
@@ -76,6 +80,23 @@
 	<script>
 		new PerfectScrollbar(".app-container")
 	</script>
+
+	{{-- C:\xampp\htdocs\laravel\Udemy\breeze\public\backend\assets\js匯入驗證validate.min.js --}}
+	<script src="{{asset('backend/assets/js/validate.min.js')}}"></script>
+	{{-- 匯入sweetalert2 --}}
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+	<script src="{{ asset('backend/assets/js/code.js') }}"></script>
+
+	{{-- DataTable --}}
+	<script src="{{asset('backend/assets/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>
+	<script src="{{asset('backend/assets/plugins/datatable/js/dataTables.bootstrap5.min.js')}}"></script>
+	<script>
+		$(document).ready(function() {
+			$('#example').DataTable();
+		  } );
+	</script>
+	{{-- End DataTable --}}
+
 
 	{{-- Toast --}}
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
